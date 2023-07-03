@@ -67,25 +67,25 @@ section>h5 {
     color: var(--color-light);
 }
 
-section > h2{
+section>h2 {
     color: var(--color-primary);
     margin-bottom: 3rem;
 }
 
-.text-light{
+.text-light {
     color: var(--color-light)
 }
 
-a{
+a {
     color: var(--color-primary);
     transition: var(--transition)
 }
 
-a:hover{
+a:hover {
     color: var(--color-white);
 }
 
-.btn{
+.btn {
     width: max-content;
     display: inline-block;
     color: var(--color-primary);
@@ -96,8 +96,46 @@ a:hover{
     transition: var(--transition);
 }
 
-.btn:hover{
+.btn:hover {
     background: var(--color-white);
     color: var(--color-bg);
     border-color: transparent;
+
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: var(--color-bg);
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Media queries for tablet Screen */
+
+@media screen and (max-width: 1024px) {
+    .container {
+        width: var(--container-width-md);
+    }
+
+    section {
+        margin-top: 6rem;
+    }
+
+}
+
+/* Media queries for mobile Screen */
+
+@media screen and (max-width: 576px) {
+    .container {
+        width: var(--container-width-sm);
+    }
+
+    section>h2 {
+        margin-bottom: 2rem;
+    }
+
 }
