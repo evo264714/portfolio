@@ -4,6 +4,7 @@ import { FaFacebookMessenger } from 'react-icons/fa';
 import { BiLogoWhatsapp } from 'react-icons/bi';
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 
 const Contact = () => {
     const form = useRef();
@@ -12,7 +13,13 @@ const Contact = () => {
         e.preventDefault();
     
         emailjs.sendForm('service_ihmlmsn', 'template_empm3ge', form.current, 'Esax0AzUxPYPUWpv_')
-          
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Thank you for sending a message!',
+            showConfirmButton: false,
+            timer: 1500
+          })  
         e.target.reset()
       };
     return (
@@ -45,7 +52,7 @@ const Contact = () => {
                     <input type="text" name='name' placeholder='Your Full Name' required />
                     <input type="email" name='email' placeholder='Your Email' required />
                     <textarea name="message" rows="7" placeholder='Your Message' required></textarea>
-                    <button type='submit' className='btn btn-primary'>Send Message</button>
+                    <button type='submit'className='btn btn-primary'>Send Message</button>
                 </form>
             </div>
         </section>
